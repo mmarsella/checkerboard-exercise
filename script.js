@@ -22,16 +22,16 @@ for(var i = 0; i < 63; i++)
 	// will only append only the 1 time i define it
 	var div = document.createElement("div");
 
-	//Add Style
+	var randomOne = Math.floor(Math.random() * 255) + 1;
+	var randomTwo = Math.floor(Math.random() * 255) + 1;
+	var randomThree = Math.floor(Math.random() * 255) + 1;
 
-	if(i % 2 === 0)
-	{
-		div.style.backgroundColor = "red";
-	}
-	else
-	{
-		div.style.backgroundColor = "black";
-	}
+
+	//Add Random Style using rgb(#,#,#)
+
+	console.log("rgb("+randomOne+","+randomTwo+","+randomThree+")");
+	div.style.backgroundColor = "rgb("+randomOne+","+randomTwo+","+randomThree+")";
+	
 	
 	div.style.width = "11.1%";
 	div.style.paddingBottom = "11.1%";

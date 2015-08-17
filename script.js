@@ -8,6 +8,11 @@ Each tile's paddingBottom is 11.1%
 9 x 7 grid
 */
 
+
+// write code to change each tile's color to a new random color 
+// every 2 seconds.
+
+
 window.onload = function(){
 
 
@@ -22,17 +27,17 @@ for(var i = 0; i < 63; i++)
 	// will only append only the 1 time i define it
 	var div = document.createElement("div");
 
-	var randomOne = Math.floor(Math.random() * 255) + 1;
-	var randomTwo = Math.floor(Math.random() * 255) + 1;
-	var randomThree = Math.floor(Math.random() * 255) + 1;
+	var randomOne = Math.floor(Math.random() * 355) + 50;
+	var randomTwo = Math.floor(Math.random() * 355) + 50;
+	var randomThree = Math.floor(Math.random() * 355) + 50;
+
+    div.style.backgroundColor = "rgb("+randomOne+","+randomTwo+","+randomThree+")";
 
 
-	//Add Random Style using rgb(#,#,#)
+	 // Set an interval per div created to change colors every 2 seconds
+	var count = 0;
+	var timerID = setInterval(changeColor.bind(null,div),Math.random() * 2000);	
 
-	console.log("rgb("+randomOne+","+randomTwo+","+randomThree+")");
-	div.style.backgroundColor = "rgb("+randomOne+","+randomTwo+","+randomThree+")";
-	
-	
 	div.style.width = "11.1%";
 	div.style.paddingBottom = "11.1%";
 	div.style.cssFloat = "left";
@@ -40,10 +45,21 @@ for(var i = 0; i < 63; i++)
 
 	// Append to parent
 	document.body.appendChild(div);
-}
+} // End of for loop
 
+function changeColor(div){
+    count++;
+    console.log(count);
+   
+	randomOne = Math.floor(Math.random() * 355) + 50;
+	randomTwo = Math.floor(Math.random() * 355) + 50;
+	randomThree = Math.floor(Math.random() * 355) + 50;
 
-
+    if(count >= 3)
+    {
+        clearInterval(timerID);
+    }
+    div.style.backgroundColor = "rgb("+randomOne+","+randomTwo+","+randomThree+")";}
 
 }   // END ONLOAD
 

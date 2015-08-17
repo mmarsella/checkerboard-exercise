@@ -16,6 +16,16 @@ Each tile's paddingBottom is 11.1%
 window.onload = function(){
 
 
+//Create Audio for BONUS FEATURES!!!
+
+var audioPlayer = document.createElement("AUDIO");
+
+// audioPlayer.setAttribute("src")
+
+
+
+
+
 // Create for loop to alternate black/red backgroundColor
 
 for(var i = 0; i < 63; i++)
